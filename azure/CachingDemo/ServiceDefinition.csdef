@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<ServiceDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="CachingDemo" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <WorkerRole name="DemoCache">
+    <Imports>
+      <Import moduleName="Caching" />
+    </Imports>
+    <Startup>
+      <Task commandLine="setup_worker.cmd &gt; log.txt" executionContext="elevated">
+        <Environment>
+          <Variable name="EMULATED">
+            <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+          </Variable>
+          <Variable name="RUNTIMEID" value="" />
+          <Variable name="RUNTIMEURL" value="" />
+        </Environment>
+      </Task>
+      <Task commandLine=".\startup.cmd &gt; startup_log.txt" executionContext="elevated" />
+    </Startup>
+    <LocalResources>
+      <LocalStorage name="DiagnosticStore" cleanOnRoleRecycle="false" />
+    </LocalResources>
+    <Endpoints />
+    <Runtime>
+      <Environment>
+        <Variable name="PORT">
+          <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/Endpoints/Endpoint[@name='HttpIn']/@port" />
+        </Variable>
+        <Variable name="EMULATED">
+          <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+        </Variable>
+      </Environment>
+      <EntryPoint>
+        <ProgramEntryPoint commandLine="worker.cmd" setReadyOnProcessStart="true" />
+      </EntryPoint>
+    </Runtime>
+  </WorkerRole>
+</ServiceDefinition>

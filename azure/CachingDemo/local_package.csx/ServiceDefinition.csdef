@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="CachingDemo" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <WorkerRole name="DemoCache">
+    <LocalResources>
+      <LocalStorage name="DiagnosticStore" cleanOnRoleRecycle="false" />
+    </LocalResources>
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.CacheSizePercentage" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ConfigStoreConnectionString" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.DiagnosticLevel" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.NamedCaches" />
+    </ConfigurationSettings>
+    <Endpoints>
+      <InternalEndpoint name="Microsoft.WindowsAzure.Plugins.Caching.cacheArbitrationPort" protocol="tcp" />
+      <InternalEndpoint name="Microsoft.WindowsAzure.Plugins.Caching.cacheClusterPort" protocol="tcp" />
+      <InternalEndpoint name="Microsoft.WindowsAzure.Plugins.Caching.cacheReplicationPort" protocol="tcp" />
+      <InternalEndpoint name="Microsoft.WindowsAzure.Plugins.Caching.cacheServicePortInternal" protocol="tcp" />
+      <InternalEndpoint name="Microsoft.WindowsAzure.Plugins.Caching.cacheSocketPort" protocol="tcp" />
+    </Endpoints>
+    <Certificates />
+  </WorkerRole>
+</ServiceDefinition>

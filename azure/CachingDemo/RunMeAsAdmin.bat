@@ -1,0 +1,1 @@
+powershell .\startcache.ps1

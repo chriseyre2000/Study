@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RoleModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="DemoCache" version="1.8.31004.1351" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <Startup>
+    <Task commandLine="DotNetUpdate.cmd" executionContext="elevated" relativePath="plugins\Caching">
+      <Environment>
+        <Variable name="IsEmulated">
+          <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+        </Variable>
+        <Variable name="CachingLocalStorePath">
+          <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='DiagnosticStore']/@path" />
+        </Variable>
+        <Variable name="RdModuleName" value="Caching" />
+        <Variable name="WaRoleType" value="WorkerRole" />
+      </Environment>
+    </Task>
+    <Task commandLine="CacheInstaller.exe" executionContext="elevated" relativePath="plugins\Caching">
+      <Environment>
+        <Variable name="RdModuleName" value="Caching" />
+        <Variable name="WaRoleType" value="WorkerRole" />
+      </Environment>
+    </Task>
+    <Task commandLine="setup_worker.cmd &gt; log.txt" executionContext="elevated" relativePath="approot\">
+      <Environment>
+        <Variable name="EMULATED">
+          <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+        </Variable>
+        <Variable name="RUNTIMEID" value="" />
+        <Variable name="RUNTIMEURL" value="" />
+        <Variable name="WaRoleType" value="WorkerRole" />
+      </Environment>
+    </Task>
+    <Task commandLine=".\startup.cmd &gt; startup_log.txt" executionContext="elevated" relativePath="approot\">
+      <Environment>
+        <Variable name="WaRoleType" value="WorkerRole" />
+      </Environment>
+    </Task>
+  </Startup>
+  <Runtime protocolVersion="2011-03-08">
+    <Environment>
+      <Variable name="PORT">
+        <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/Endpoints/Endpoint[@name='HttpIn']/@port" />
+      </Variable>
+      <Variable name="EMULATED">
+        <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+      </Variable>
+    </Environment>
+    <EntryPoint>
+      <ProgramEntryPoint commandLine="worker.cmd" setReadyOnProcessStart="true" />
+    </EntryPoint>
+  </Runtime>
+  <ConfigurationSettings>
+    <Setting name="NamedCaches" nameSpace="Microsoft.WindowsAzure.Plugins.Caching" />
+    <Setting name="DiagnosticLevel" nameSpace="Microsoft.WindowsAzure.Plugins.Caching" />
+    <Setting name="CacheSizePercentage" nameSpace="Microsoft.WindowsAzure.Plugins.Caching" />
+    <Setting name="ConfigStoreConnectionString" nameSpace="Microsoft.WindowsAzure.Plugins.Caching" />
+  </ConfigurationSettings>
+  <Properties>
+    <Property name="TargetFrameworkVersion" value="v3.5" />
+    <Property name="TargetRuntimeVersion" value="v2.0.50727" />
+  </Properties>
+</RoleModel>
