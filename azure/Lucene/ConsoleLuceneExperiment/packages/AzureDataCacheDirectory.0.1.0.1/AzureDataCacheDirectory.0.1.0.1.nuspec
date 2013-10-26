@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AzureDataCacheDirectory</id>
+    <version>0.1.0.1</version>
+    <title>AzureDataCacheDirectory</title>
+    <authors>Felix Jorkowski (jorkowski.com)</authors>
+    <owners>Felix Jorkowski (jorkowski.com)</owners>
+    <licenseUrl>http://www.opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/ajorkowski/AzureDataCacheDirectory</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An implementation of the Lucene.NET directory class that uses the Azure Local Cache (Preview) as the backend</description>
+    <releaseNotes>Updated to use latest versions of deps</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <language />
+    <tags>Azure Lucene DataCache</tags>
+    <dependencies>
+      <dependency id="Lucene.Net" version="3.0.3" />
+      <dependency id="Microsoft.WindowsAzure.Caching" version="2.1.0.0" />
+    </dependencies>
+  </metadata>
+</package>
