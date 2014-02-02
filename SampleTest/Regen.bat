@@ -1,0 +1,1 @@
+D:\dev\github\ATADDSample\SampleTest\packages\SpecFlow.1.9.0\tools\specflow.exe generateall SampleTest.csproj
