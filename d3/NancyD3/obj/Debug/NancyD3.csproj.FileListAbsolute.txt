@@ -1,0 +1,13 @@
+D:\dev\study\NancyD3\NancyD3\obj\Debug\NancyD3.csprojResolveAssemblyReference.cache
+D:\dev\study\NancyD3\NancyD3\bin\NancyD3.dll.config
+D:\dev\study\NancyD3\NancyD3\bin\NancyD3.dll
+D:\dev\study\NancyD3\NancyD3\bin\NancyD3.pdb
+D:\dev\study\NancyD3\NancyD3\bin\Nancy.dll
+D:\dev\study\NancyD3\NancyD3\bin\Nancy.xml
+D:\dev\study\NancyD3\NancyD3\obj\Debug\NancyD3.dll
+D:\dev\study\NancyD3\NancyD3\obj\Debug\NancyD3.pdb
+D:\dev\study\NancyD3\NancyD3\bin\Nancy.Hosting.Aspnet.dll
+D:\dev\study\NancyD3\NancyD3\bin\Nancy.Hosting.Aspnet.xml
+D:\dev\study\NancyD3\NancyD3\bin\content\d3.v3.js
+D:\dev\study\NancyD3\NancyD3\bin\content\d3.v3.min.js
+D:\dev\study\NancyD3\NancyD3\bin\content\temp.js
