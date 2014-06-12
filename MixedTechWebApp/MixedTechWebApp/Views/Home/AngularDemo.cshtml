@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "AngularDemo";
+}
+
+<script src="~/content/angular.min.js"></script>
+
+<h2>AngularDemo</h2>
+
+<div ng-app>
+<div ng-controller="TextController">
+    <h2>Simple text binding</h2>
+    <p>{{someText}}</p>
+</div>
+
+<div ng-controller="BindingController">
+    <h2>Direct Binding</h2>
+    <input ng-model="greeting.text">
+    <p>Hello {{greeting.text}}</p>
+</div>
+</div>
+
+<div>
+    <h2>Notes</h2>
+    This demonstrates multiple controllers within one application.
+    It appears that you are limited to one ng-app per page.
+</div>
+<script>
+    function TextController($scope) {
+        $scope.someText = "Welcome to the demo";
+    }
+
+    function BindingController($scope) {
+        $scope.greeting = {text: "[Enter Name]"};
+    }
+</script>
+

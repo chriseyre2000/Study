@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "D3Demo";
+}
+
+<script src="~/content/d3.v3.min.js"></script>
+
+<h2>D3Demo</h2>
+
+<h3>Simple Data Display</h3>
+
+<p>The following content is data bound from javascript.</p>
+
+<div id="site"></div>
+
+<h3>Graphical Demo</h3>1
+
+<p>The following image is data projected from javascript.</p>
+
+<svg id="mod" height="50" width="70" />
+
+<div id="databind"></div>
+
+<h3> Demo of handling js disabled.</h3> 
+<p>If d3 is used to inject everything then the js disabled can be isolated.</p>
+
+<noscript>You don't have javascript enabled</noscript>
+
+<script type="text/javascript">
+    d3.select("div#site")
+      .text("Hello World!");
+</script>
+
+<script type="text/javascript">
+    var modx = 50
+    var mody = 25
+    
+    var data = [{ r: 15, colour: "blue" },
+                { r: 10, colour: "white" },
+                { r: 5, colour: "red" }];
+
+    d3.select("svg#mod")
+      .selectAll("circle")
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("cx", modx)
+      .attr("cy", mody)
+      .attr("r", function (d) { return d.r; })
+      .attr("fill", function (d) { return d.colour; });
+    
+</script>
+
+<script lang="text/javascript">
+    d3.select("div#databind")
+</script>
+

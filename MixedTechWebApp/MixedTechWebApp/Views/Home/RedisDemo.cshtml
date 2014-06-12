@@ -1,0 +1,13 @@
+﻿@model MixedTechWebApp.Models.RedisDemoModel
+@{
+    ViewBag.Title = "RedisDemo";
+}
+
+<h2>RedisDemo</h2>
+
+<h3>Single Value Key Get</h3>
+
+<p>This assumes a local redis store on the default machine with a value of "set DemoValue Hello" </p>
+
+@Model.DemoValue
+

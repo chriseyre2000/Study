@@ -1,7 +1,7 @@
 
-D:\dev\azure\PowershellExperiment\CachingDemo\local_package.csx\roles\DemoCache\approot>﻿:: Placeholder for role startup 
+D:\dev\github\Study\azure\CachingDemo\local_package.csx\roles\DemoCache\approot>﻿:: Placeholder for role startup 
 
-D:\dev\azure\PowershellExperiment\CachingDemo\local_package.csx\roles\DemoCache\approot>echo SUCCESS 
+D:\dev\github\Study\azure\CachingDemo\local_package.csx\roles\DemoCache\approot>echo SUCCESS 
 SUCCESS
 
-D:\dev\azure\PowershellExperiment\CachingDemo\local_package.csx\roles\DemoCache\approot>exit /b 0 
+D:\dev\github\Study\azure\CachingDemo\local_package.csx\roles\DemoCache\approot>exit /b 0 

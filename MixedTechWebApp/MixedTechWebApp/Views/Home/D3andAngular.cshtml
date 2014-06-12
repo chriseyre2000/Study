@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "D3andAngular";
+}
+
+<script src="~/content/angular.min.js"></script>
+<script src="~/content/d3.v3.min.js"></script>
+
+<h2>D3andAngular</h2>
+
+<div ng-app>
+
+    <div id="target">
+    </div>
+
+</div>
+
+<script>
+
+    function TextController($scope) {
+        $scope.someText = "This uses d3 to inject the angular template";
+    }
+
+    d3.select("div#target").attr("ng-controller","TextController").append("p").text("{{someText}}")
+</script>

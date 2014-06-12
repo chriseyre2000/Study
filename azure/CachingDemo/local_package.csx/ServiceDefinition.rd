@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="CachingDemo" generation="1" functional="0" release="0" Id="e53cbea3-4578-4603-a883-cf130e22f3dd" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="CachingDemo" generation="1" functional="0" release="0" Id="ce7f62dc-195c-46ff-a075-78443effc9b5" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="CachingDemoGroup" generation="1" functional="0" release="0">
       <settings>
@@ -85,7 +85,7 @@
       </maps>
       <components>
         <groupHascomponents>
-          <role name="DemoCache" generation="1" functional="0" release="0" software="D:\dev\azure\PowershellExperiment\CachingDemo\local_package.csx\roles\DemoCache" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaWorkerHost.exe " memIndex="1792" hostingEnvironment="consoleroleadmin" hostingEnvironmentVersion="2">
+          <role name="DemoCache" generation="1" functional="0" release="0" software="D:\dev\github\Study\azure\CachingDemo\local_package.csx\roles\DemoCache" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaWorkerHost.exe " memIndex="1792" hostingEnvironment="consoleroleadmin" hostingEnvironmentVersion="2">
             <componentports>
               <inPort name="Microsoft.WindowsAzure.Plugins.Caching.cacheArbitrationPort" protocol="tcp" />
               <inPort name="Microsoft.WindowsAzure.Plugins.Caching.cacheClusterPort" protocol="tcp" />
